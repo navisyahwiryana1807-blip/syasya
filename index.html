@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f3">
+<title>A Little Gift for You ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Sacramento&display=swap');
+:root{--pink:#f5a5b5;--rose:#d96e87;--deep:#a84961;--cream:#fff9f1;--ink:#65434b;--soft:#fff0f3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:'DM Sans',sans-serif;background:#fff5f6;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 10% 10%,#ffe2e9 0,transparent 28%),radial-gradient(circle at 90% 80%,#fbd8df 0,transparent 30%),linear-gradient(135deg,#fff7f7,#ffeef2 55%,#fff9f2)}
+button,a{font:inherit}button{cursor:pointer}.sparkles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:-1}.sparkle{position:absolute;color:#e68a9e;opacity:.55;animation:float 7s ease-in-out infinite;font-size:18px}@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-18px) rotate(15deg)}}
+.topline{position:fixed;top:0;left:0;right:0;height:5px;background:#f8d5dd;z-index:10}.topline span{display:block;height:100%;width:0;background:var(--rose);transition:width .4s}
+.screen{display:none;min-height:100svh;padding:76px 20px 50px;align-items:center;justify-content:center;position:relative}.screen.active{display:flex;animation:appear .65s ease both}@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card{width:min(850px,100%);position:relative;text-align:center;padding:clamp(25px,6vw,65px);border:1px solid #f5d4dc;border-radius:28px;background:rgba(255,250,248,.82);box-shadow:0 22px 70px #c46b7b18;overflow:hidden}.card:after{content:"";position:absolute;inset:10px;border:1px dashed #eab4c0;border-radius:20px;pointer-events:none}
+.eyebrow{font-size:.78rem;letter-spacing:.19em;text-transform:uppercase;color:#b86b7e;font-weight:700}.script{font-family:'Sacramento',cursive;font-weight:400;color:var(--deep)}h1,h2,p{position:relative;z-index:1}h1{font-family:'Quicksand',sans-serif;font-size:clamp(2.3rem,7vw,4.6rem);line-height:1.08;margin:18px 0;color:#b95470}h2{font-family:'Quicksand',sans-serif;color:#b95470;font-size:clamp(1.7rem,5vw,2.6rem);margin:12px 0 18px}p{line-height:1.8}.subtitle{max-width:520px;margin:0 auto 28px;font-size:1.02rem;color:#805d65}.ribbon{font-size:3.5rem;display:block;margin:0 auto 12px;filter:drop-shadow(0 7px 8px #c46b7b22)}.btn{border:0;border-radius:999px;padding:14px 25px;background:linear-gradient(135deg,#e9879d,#d96e87);color:white;font-weight:700;box-shadow:0 8px 20px #d96e8738;transition:transform .2s,box-shadow .2s;position:relative;z-index:2}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px #d96e8748}.btn.secondary{background:#fff7f8;color:#b95470;border:1px solid #efb8c5;box-shadow:none}.tiny{font-size:.82rem;color:#a77d86}.decor{position:absolute;font-size:2rem;opacity:.7}.d1{top:24px;left:26px}.d2{top:30px;right:28px}.d3{bottom:24px;left:35px}.d4{bottom:25px;right:32px}
+.gift-wrap{margin:24px auto 18px;width:min(270px,70vw);height:210px;position:relative;display:grid;place-items:center;cursor:pointer;z-index:1}.gift-box{position:absolute;width:190px;height:125px;bottom:18px;background:linear-gradient(135deg,#f6b7c4,#e88da3);border-radius:8px;box-shadow:0 15px 30px #c86a7b2c}.gift-box:before{content:"";position:absolute;left:75px;top:0;width:38px;height:100%;background:#ffe3e9}.gift-lid{position:absolute;top:31px;width:215px;height:37px;border-radius:7px;background:linear-gradient(135deg,#f9c5cf,#e9879d);box-shadow:0 8px 14px #c86a7b25;transition:transform .8s;z-index:2}.gift-lid:before{content:"";position:absolute;left:88px;top:0;width:38px;height:100%;background:#ffe3e9}.bow{position:absolute;top:0;left:91px;font-size:55px;color:#b95470;z-index:3;transition:transform .8s}.gift-wrap.open .gift-lid{transform:translateY(-90px) rotate(-12deg)}.gift-wrap.open .bow{transform:translateY(-88px) rotate(-15deg)}.memory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0;position:relative;z-index:1}.memory{background:white;padding:10px 10px 18px;box-shadow:0 7px 20px #b75e7315;transform:rotate(var(--rot));border:1px solid #f6dce2}.photo-placeholder{height:135px;border-radius:4px;background:linear-gradient(145deg,#f9d8df,#fff0d9);display:grid;place-items:center;font-size:2.5rem}.memory p{font-family:'Sacramento',cursive;font-size:1.45rem;margin:9px 0 0}.envelope-area{margin:30px auto 25px;width:min(340px,85vw);height:220px;perspective:900px;position:relative;z-index:1;cursor:pointer}.envelope{position:absolute;inset:25px 0 0;background:#f6b7c4;border-radius:8px;box-shadow:0 15px 35px #b75e7322}.envelope:before{content:"";position:absolute;inset:0;background:#f9cad4;clip-path:polygon(0 0,50% 57%,100% 0);border-radius:8px 8px 0 0}.envelope:after{content:"";position:absolute;inset:0;background:#e991a5;clip-path:polygon(0 100%,0 0,50% 56%,100% 0,100% 100%);border-radius:0 0 8px 8px}.flap{position:absolute;top:25px;left:0;width:100%;height:120px;background:#f3a9ba;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s;z-index:4;filter:drop-shadow(0 4px 2px #a8496110)}.seal{position:absolute;z-index:5;left:50%;top:125px;transform:translateX(-50%);font-size:38px;transition:opacity .3s}.letter-peek{position:absolute;z-index:2;left:9%;width:82%;height:150px;bottom:28px;background:#fff8eb;border:1px solid #f0dfc8;padding:16px 12px;font-family:'Sacramento',cursive;font-size:1.7rem;transition:transform .8s;box-shadow:0 3px 10px #8b566012}.envelope-area.open .flap{transform:rotateX(180deg)}.envelope-area.open .letter-peek{transform:translateY(-105px)}.envelope-area.open .seal{opacity:0}.letter-paper{max-width:650px;margin:0 auto;background:#fff9ed;border:1px solid #f0dfc8;padding:clamp(25px,6vw,55px);box-shadow:0 15px 45px #a8496117;text-align:left;position:relative;z-index:1;transform:rotate(-.4deg)}.letter-paper:before{content:"♡";position:absolute;right:18px;top:10px;color:#d98a9c;font-size:25px}.letter-paper p{white-space:pre-line}.letter-paper .signoff{font-family:'Sacramento',cursive;font-size:2rem;color:#b95470}.field{width:100%;border:1px solid #efc4cd;background:#fffdfb;border-radius:12px;padding:12px 14px;color:var(--ink);outline-color:#df8ba0}.customize{max-width:650px;margin:22px auto 0;text-align:left;position:relative;z-index:1}.customize label{display:block;font-size:.84rem;font-weight:700;margin:12px 0 6px;color:#9c5e6d}.footer{position:fixed;bottom:0;left:0;right:0;padding:10px 18px;background:#fff8f8d9;border-top:1px solid #f5d9df;display:flex;align-items:center;justify-content:space-between;font-size:.75rem;color:#a77d86;z-index:8;backdrop-filter:blur(10px)}.music-btn{border:1px solid #f0c4ce;background:white;color:#b95470;border-radius:99px;padding:6px 11px;font-size:.75rem}.nav-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px;position:relative;z-index:2}.heart{display:inline-block;color:#df7d95;animation:heartbeat 1.8s infinite}@keyframes heartbeat{50%{transform:scale(1.18)}}.hidden{display:none!important}
+@media(max-width:560px){.screen{padding:55px 13px 60px}.card{padding:35px 20px;border-radius:22px}.memory-grid{gap:7px}.photo-placeholder{height:95px;font-size:1.8rem}.memory{padding:6px 6px 12px}.memory p{font-size:1.15rem}.footer{font-size:.68rem}.envelope-area{height:200px}.letter-paper{padding:28px 22px}}
+</style>
+</head>
+<body>
+<div class="topline"><span id="progress"></span></div>
+<div class="sparkles" id="sparkles"></div>
+<section class="screen active" id="welcome">
+ <div class="card">
+  <span class="decor d1">♡</span><span class="decor d2">✧</span><span class="decor d3">🌷</span><span class="decor d4">♡</span>
+  <span class="ribbon">🎀</span><div class="eyebrow">a tiny little surprise</div>
+  <h1>I made something<br><span class="script">for you...</span></h1>
+  <p class="subtitle">Bukan hadiah yang besar, cuma sedikit bagian dari hati yang ingin aku bagikan sama kamu.</p>
+  <button class="btn" onclick="go('gift')">Open Your Gift ♡</button>
+  <p class="tiny" style="margin-top:24px">dibuat khusus untuk seseorang yang spesial ✿</p>
+ </div>
+</section>
+<section class="screen" id="gift">
+ <div class="card">
+  <span class="decor d1">✧</span><span class="decor d2">♡</span>
+  <div class="eyebrow">something just for you</div><h2>A little gift, with lots of love</h2>
+  <p class="subtitle">Ada beberapa hal kecil yang pengin aku kasih ke kamu. Tekan hadiahnya, yaa!</p>
+  <div class="gift-wrap" id="giftWrap" onclick="openGift()" role="button" tabindex="0" aria-label="Buka hadiah">
+   <div class="gift-box"></div><div class="gift-lid"></div><div class="bow">🎀</div>
+  </div>
+  <p class="tiny" id="giftHint">tap hadiah untuk membuka ♡</p>
+  <div class="nav-row"><button class="btn" onclick="go('memories')">Continue ♡</button></div>
+ </div>
+</section>
+<section class="screen" id="memories">
+ <div class="card">
+  <div class="eyebrow">little things, lovely memories</div><h2>Our tiny corner of happiness</h2>
+  <p class="subtitle">Hal-hal sederhana kadang justru jadi bagian yang paling berharga.</p>
+  <div class="memory-grid">
+   <div class="memory" style="--rot:-4deg"><div class="photo-placeholder">🌸</div><p>little moments</p></div>
+   <div class="memory" style="--rot:2deg"><div class="photo-placeholder">🧸</div><p>happy thoughts</p></div>
+   <div class="memory" style="--rot:-2deg"><div class="photo-placeholder">🌷</div><p>you & me</p></div>
+  </div>
+  <p class="tiny">Ini tempat sementara untuk kenangan kita. Kamu bisa mengganti emoji dengan foto kalian di kode website.</p>
+  <div class="nav-row"><button class="btn secondary" onclick="go('gift')">← Back</button><button class="btn" onclick="go('envelope')">There's a Letter ♡</button></div>
+ </div>
+</section>
+<section class="screen" id="envelope">
+ <div class="card">
+  <span class="decor d1">♡</span><span class="decor d2">✧</span>
+  <div class="eyebrow">one last little thing</div><h2>There's something<br><span class="script">I want you to read...</span></h2>
+  <p class="subtitle">Aku menyimpan beberapa kata di dalam amplop ini. Buka kalau kamu sudah siap, ya.</p>
+  <div class="envelope-area" id="envelopeArea" onclick="openEnvelope()" role="button" tabindex="0" aria-label="Buka amplop">
+   <div class="envelope"></div><div class="letter-peek">for you, with love ♡</div><div class="flap"></div><div class="seal">💗</div>
+  </div>
+  <button class="btn" id="openLetterBtn" onclick="openEnvelope()">Open My Letter ♡</button>
+  <div class="nav-row"><button class="btn secondary" onclick="go('memories')">← Back</button></div>
+ </div>
+</section>
+<section class="screen" id="letter">
+ <div class="card">
+  <div class="eyebrow">a letter from me to you</div><h2 class="script" style="font-size:3rem">Dear, <span id="recipientHeading">you</span> ♡</h2>
+  <article class="letter-paper">
+   <p id="letterBody">Hai, kamu! ♡
+
+Aku cuma mau bilang terima kasih karena sudah hadir dan menjadi bagian dari hari-hariku. Mungkin aku nggak selalu pandai menyampaikan apa yang aku rasakan, tapi aku harap kamu tahu kalau kehadiran kamu berarti.
+
+Semoga hari-hari kamu ke depannya dipenuhi banyak hal baik. Kalau ada hari yang terasa berat, semoga kamu tetap ingat kalau kamu sudah berusaha sejauh ini, dan itu patut kamu banggakan.
+
+Terus jadi diri kamu sendiri, ya. Kamu nggak harus selalu baik-baik saja dan nggak perlu jadi sempurna untuk layak disayangi. Aku harap ada banyak alasan kecil yang bikin kamu tersenyum, hari ini dan seterusnya.
+
+Terima kasih sudah menjadi kamu. Senang rasanya bisa mengenal kamu. ♡</p>
+   <p class="signoff">With all my heart, ♡</p><p id="senderName" style="margin-top:-8px">someone who cares about you</p>
+  </article>
+  <div class="nav-row"><button class="btn secondary" onclick="go('envelope')">Read it again</button><button class="btn" onclick="go('ending')">One last thing ♡</button></div>
+ </div>
+</section>
+<section class="screen" id="ending">
+ <div class="card">
+  <span class="decor d1">♡</span><span class="decor d2">✧</span><span class="ribbon">🌷</span>
+  <div class="eyebrow">the end... for now</div><h1>Thank you<br><span class="script">for being you ♡</span></h1>
+  <p class="subtitle">Ini cuma hadiah kecil, tapi aku harap bisa bikin kamu tersenyum. Semoga kita punya lebih banyak cerita baik untuk dikenang.</p>
+  <div style="font-size:2rem;margin:20px">💌 <span class="heart">♡</span> 🎀</div>
+  <p class="tiny">made with a little love, just for you</p>
+  <div class="nav-row"><button class="btn" onclick="go('welcome')">Start Again ♡</button><a class="btn secondary hidden" id="specialLink" href="#" target="_blank" rel="noopener">Open Our Special Place ↗</a></div>
+ </div>
+</section>
+<div class="footer"><span>♡ a little gift, made with love</span><button class="music-btn" id="musicBtn" onclick="toggleMusic()">♫ Music: off</button></div>
+<script>
+const screens=['welcome','gift','memories','envelope','letter','ending'];let current='welcome',giftOpened=false,envelopeOpened=false,musicOn=false,audioCtx=null,oscillators=[];
+const $=id=>document.getElementById(id);
+function go(id){screens.forEach(s=>$(s).classList.toggle('active',s===id));current=id;let idx=screens.indexOf(id);$('progress').style.width=((idx)/(screens.length-1)*100)+'%';window.scrollTo({top:0,behavior:'smooth'});if(id==='letter'&&!envelopeOpened){openEnvelope(true)}}
+function openGift(){if(giftOpened)return;giftOpened=true;$('giftWrap').classList.add('open');$('giftHint').textContent='yeay, hadiah kecilnya sudah terbuka ♡';setTimeout(()=>{},700)}
+function openEnvelope(skip){if(envelopeOpened){if(!skip)go('letter');return}envelopeOpened=true;$('envelopeArea').classList.add('open');$('openLetterBtn').textContent='Read My Letter ♡';$('openLetterBtn').onclick=()=>go('letter');if(skip)return;setTimeout(()=>go('letter'),1050)}
+['giftWrap','envelopeArea'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();id==='giftWrap'?openGift():openEnvelope()}}));
+for(let i=0;i<24;i++){let el=document.createElement('span');el.className='sparkle';el.textContent=['✧','♡','✿','·'][i%4];el.style.left=Math.random()*100+'%';el.style.top=Math.random()*100+'%';el.style.animationDelay=(Math.random()*7)+'s';el.style.fontSize=(12+Math.random()*17)+'px';$('sparkles').appendChild(el)}
+// Optional gentle synthesized tones; browsers require a user click before audio can play.
+function toggleMusic(){if(!window.AudioContext&&!window.webkitAudioContext){$('musicBtn').textContent='♫ audio unavailable';return}if(!musicOn){audioCtx=new (window.AudioContext||window.webkitAudioContext)();const notes=[523.25,659.25,783.99,659.25];let i=0;function play(){if(!musicOn)return;let osc=audioCtx.createOscillator(),gain=audioCtx.createGain();osc.type='sine';osc.frequency.value=notes[i++%notes.length];gain.gain.setValueAtTime(.0001,audioCtx.currentTime);gain.gain.exponentialRampToValueAtTime(.035,audioCtx.currentTime+.08);gain.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.7);osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+.75);setTimeout(play,850)}musicOn=true;play();$('musicBtn').textContent='♫ Music: on'}else{musicOn=false;if(audioCtx)audioCtx.close();$('musicBtn').textContent='♫ Music: off'}}
+</script>
+</body>
+</html>
